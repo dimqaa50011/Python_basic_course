@@ -9,3 +9,12 @@
 
 def is_weekend(day: int) -> bool:
     return 6 <= day <= 7
+
+
+def run_task1():
+    msg: str
+    if is_weekend(int(input("Введите день недели: "))):
+        msg = "Да"
+    else:
+        msg = "Нет"
+    print(msg)
