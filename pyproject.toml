@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "python-basic-course"
+version = "0.1.0"
+description = ""
+authors = ["Dmitry <dz5011@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python_basic_course"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
