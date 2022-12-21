@@ -6,8 +6,10 @@
 from random import uniform
 from typing import List, Tuple
 
+from .base_task import BaseTask
 
-class Task3:
+
+class FructionDifference(BaseTask):
     @classmethod
     def run(cls):
         numbers_list = cls.create_float_list(*cls.get_data())

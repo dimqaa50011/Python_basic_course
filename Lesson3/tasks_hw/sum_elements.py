@@ -5,8 +5,10 @@
 from typing import List
 from random import randint
 
+from .base_task import BaseTask
 
-class Task1:
+
+class SumElements(BaseTask):
     
     @classmethod
     def run(cls):

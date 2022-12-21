@@ -6,8 +6,10 @@
 from random import randint
 from typing import List
 
+from .base_task import BaseTask
 
-class Task2:
+
+class MultPair(BaseTask):
 
     @classmethod
     def run(cls):
@@ -21,7 +23,8 @@ class Task2:
     @staticmethod
     def get_mult_pair(numbers: List) -> List:
         res_list = []
-        for i in range(len(numbers) // 2 + (1 if len(numbers) % 2 != 0 else 0)):
+        length_parity = 1 if len(numbers) % 2 != 0 else 0
+        for i in range(len(numbers) // 2 + length_parity):
             res_list.append(numbers[i] * numbers[len(numbers) - i - 1])
         return res_list
     

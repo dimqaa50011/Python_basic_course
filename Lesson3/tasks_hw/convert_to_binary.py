@@ -4,8 +4,10 @@
 # 3 -> 11
 # 2 -> 10
 
+from .base_task import BaseTask
 
-class Task4:
+
+class ConvertToBinary(BaseTask):
     @classmethod
     def run(cls):
         number = int(input("Введите число: "))

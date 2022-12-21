@@ -1,16 +1,13 @@
-from sum_elements import Task1
-from mult_pair import Task2
-from fruction_difference import Task3
-from convert_to_binary import Task4
-from fibonacci import Task5
+# from tasks_hw.fibonacci import Task5
+from tasks_hw import BaseTask
 
 
 def runner():
-    # Task1.run()
-    # Task2.run()
-    # Task3.run()
-    # Task4.run()
-    Task5.run()
+    print(BaseTask.__subclasses__())
+    print()
+
+    for task in BaseTask.__subclasses__():
+        task.run()
 
 
 if __name__ == "__main__":

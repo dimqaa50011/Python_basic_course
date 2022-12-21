@@ -3,9 +3,10 @@ from typing import List
 # Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 # Пример:
 # для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] Негафибоначчи
+from .base_task import BaseTask
 
 
-class Task5:
+class Fibonacci(BaseTask):
     @classmethod
     def run(cls):
         print(cls.get_fibonacci(int(input("Введите длину последовательности: "))))
