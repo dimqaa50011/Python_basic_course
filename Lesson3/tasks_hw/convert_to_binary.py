@@ -14,6 +14,10 @@ class ConvertToBinary(BaseTask):
         print(f"{number} -> {cls.get_binary(number)}")
 
     @classmethod
+    def show_condition(cls):
+        print("Напишите программу, которая будет преобразовывать десятичное число в двоичное.\n")
+
+    @classmethod
     def get_binary(cls, number: int):
         bin_list = []
         while number > 0:

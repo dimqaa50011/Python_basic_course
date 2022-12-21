@@ -12,6 +12,10 @@ class Fibonacci(BaseTask):
         print(cls.get_fibonacci(int(input("Введите длину последовательности: "))))
 
     @classmethod
+    def show_condition(cls):
+        print("Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.\n")
+
+    @classmethod
     def get_fibonacci(cls, length: int):
         fibonacci_seq = [1, 1]
         nega_fibonacci_seq = [1, -1]

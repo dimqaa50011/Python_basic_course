@@ -15,7 +15,14 @@ class FructionDifference(BaseTask):
     def run(cls):
         numbers_list = list(map(round_up, create_list(False, *get_data())))
         print(
-            f"{numbers_list} => {cls.get_difference(cls.get_max_and_min_elements(cls.get_fractal_parts(numbers_list)))}")
+            f"{numbers_list} => "
+            f"{round(cls.get_difference(cls.get_max_and_min_elements(cls.get_fractal_parts(numbers_list))), 2)}")
+
+    @classmethod
+    def show_condition(cls):
+        print("Задайте список из вещественных чисел.\n"
+              "Напишите программу, которая найдёт\n"
+              "разницу между максимальным и минимальным значением дробной части элементов, отличной от 0.\n")
 
     @classmethod
     def get_fractal_parts(cls, list_numbers: List[float]) -> List[int]:

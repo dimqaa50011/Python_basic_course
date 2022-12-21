@@ -16,6 +16,11 @@ class MultPair(BaseTask):
         numbers = create_list(True, *get_data())
         print(f"{numbers} => {cls.get_mult_pair(numbers)}")
 
+    @classmethod
+    def show_condition(cls):
+        print("Напишите программу, которая найдёт произведение пар чисел списка.\n"
+              "Парой считаем первый и последний элемент, второй и предпоследний и т.д.\n")
+
     @staticmethod
     def get_mult_pair(numbers: List) -> List:
         res_list = []
@@ -23,4 +28,3 @@ class MultPair(BaseTask):
         for i in range(len(numbers) // 2 + length_parity):
             res_list.append(numbers[i] * numbers[len(numbers) - i - 1])
         return res_list
-

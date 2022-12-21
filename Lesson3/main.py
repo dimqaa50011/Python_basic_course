@@ -5,6 +5,7 @@ def runner():
     task_number = 1
     for task in BaseTask.__subclasses__():
         print(f"Задача номер {task_number}")
+        task.show_condition()
         task.run()
         task_number += 1
         print("_" * 50)

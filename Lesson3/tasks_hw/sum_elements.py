@@ -10,7 +10,7 @@ from .helpers import create_list, get_data
 
 
 class SumElements(BaseTask):
-    
+
     @classmethod
     def run(cls):
         list_numbers = create_list(True, *get_data())
@@ -18,6 +18,11 @@ class SumElements(BaseTask):
         print(f"{list_numbers} -> на нечётных позициях элементы "
               f"{', '.join(list(map(str, elements_in_odd_positions)))}"
               f", ответ: {cls.get_sum_elements(elements_in_odd_positions)}")
+
+    @classmethod
+    def show_condition(cls):
+        print("Задайте список из нескольких чисел. Напишите программу,\n"
+              "которая найдёт сумму элементов списка, стоящих на позиции с нечетным индексом.\n")
 
     @staticmethod
     def get_sum_elements(numbers: List) -> int:
