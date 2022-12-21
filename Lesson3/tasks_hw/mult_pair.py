@@ -7,18 +7,14 @@ from random import randint
 from typing import List
 
 from .base_task import BaseTask
+from .helpers import create_list, get_data
 
 
 class MultPair(BaseTask):
-
     @classmethod
     def run(cls):
-        numbers = cls.create_list(*cls.get_data())
+        numbers = create_list(True, *get_data())
         print(f"{numbers} => {cls.get_mult_pair(numbers)}")
-
-    @staticmethod
-    def create_list(max_value_element: int = 15, length_list: int = 15):
-        return [randint(0, max_value_element) for _ in range(length_list)] 
 
     @staticmethod
     def get_mult_pair(numbers: List) -> List:
@@ -27,9 +23,4 @@ class MultPair(BaseTask):
         for i in range(len(numbers) // 2 + length_parity):
             res_list.append(numbers[i] * numbers[len(numbers) - i - 1])
         return res_list
-    
-    @staticmethod
-    def get_data():
-        return (int(input("Введите максимальное значение элемента списка: ")), int(input("Введите длину списка: ")))
-    
 

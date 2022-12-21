@@ -7,18 +7,15 @@ from random import uniform
 from typing import List, Tuple
 
 from .base_task import BaseTask
+from .helpers import create_list, get_data, round_up
 
 
 class FructionDifference(BaseTask):
     @classmethod
     def run(cls):
-        numbers_list = cls.create_float_list(*cls.get_data())
+        numbers_list = list(map(round_up, create_list(False, *get_data())))
         print(
             f"{numbers_list} => {cls.get_difference(cls.get_max_and_min_elements(cls.get_fractal_parts(numbers_list)))}")
-
-    @staticmethod
-    def create_float_list(max_value: int = 15, length: int = 15) -> List[float]:
-        return [round(uniform(0, max_value), 2) for _ in range(length)]
 
     @classmethod
     def get_fractal_parts(cls, list_numbers: List[float]) -> List[int]:
@@ -38,7 +35,3 @@ class FructionDifference(BaseTask):
     @classmethod
     def get_difference(cls, numbers: Tuple):
         return numbers[0] - numbers[-1]
-
-    @staticmethod
-    def get_data():
-        return (int(input("Введите максимальное значение элемента списка: ")), int(input("Введите длину списка: ")))
